@@ -34,14 +34,15 @@ E' in fase di sviluppo la versione .Net Core che è multipiattaforma e gira sott
 I database supportati sono SQL Server, Postgres SQL, MySQL, SQLLite e Oracle.
 
 ### Compatibilità
-Cave-Serene è una applicazione web HTML5 responsive. Come tale essa è compatibile con una gamma molto estesa di dispositivi: computer, tablet e smartphone. Segnalateci eventuali (ed improbabili) incompatibilità.
+Cave-Serene è una applicazione web HTML5 responsive. Come tale essa è compatibile con una gamma molto estesa di dispositivi: computer, tablet e smartphone. Segnalateci eventuali (ed improbabili) incompatibilità [qui](https://github.com/gsaielli/cave-serene/issues).
 
-Esempi di visualizzazione dell'anagrafica Cave in iPhone 5  (320x658 pixels):
+Esempi di visualizzazione dell'**Anagrafica Cave in iPhone 5**  (320x658 pixels):
+
 ![Schermata 6](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s6.png)
 ![Schermata 7](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s7.png)
 
 ## Stato attuale di Cave-Serene
-Le funzionalità implementate sono funzionanti al 100% anche se test molto estesi non sono stati effettuati. Segnalateci eventuali errori.
+Le funzionalità implementate **sono funzionanti al 100%** anche se test molto estesi non sono stati effettuati. Segnalateci eventuali errori [qui](https://github.com/gsaielli/cave-serene/issues).
 
 ## Demo online
 Il demo online si trova [qui](http://caveserene.aielli.net). Potete modificare i dati a piacimento ma il database viene rigenerato periodicamente.
@@ -50,27 +51,42 @@ Il demo online si trova [qui](http://caveserene.aielli.net). Potete modificare i
 ATTENZIONE: **le istruzioni che seguono si riferiscono esclusivamente all'installazione sotto Windows con database SQL Server**. E' necessario avere una certa pratica da sistemita o programmatore (essere capaci di creare database SQL e applicazioni IIS e di modificare il web.config per quanto riguarda la stringa di connessione del db).
 
 ### Creare il database
-Potete creare il database in due modi differenti. E' necessario l'accesso con **privilegi dba** ad un server Microsoft SQL Server (qualunque versione va bene, anche non molto recente).
+Potete creare il database in due modi differenti. E' necessario l'accesso con **privilegi dba** ad un server **Microsoft SQL Server** (qualunque versione va bene, anche non molto recente).
 
 **Modo 1**: usare uno script di creazione
-1. Scaricare lo script di creazione del database da qui
+1. Scaricare lo script di creazione del database da [qui](https://github.com/gsaielli/cave-serene/raw/master/cave-serene-create-script.sql)
 1. Aprire una finestra di query in SQL Management Studio
 1. Eseguire lo script
 
 **Modo 2**: restore di un db già pronto
-1. Scaricare il database da qui
-1. Eseguite il restore da SQL Management Studio
+1. Scaricare il database da [qui](https://github.com/gsaielli/cave-serene/raw/master/cave-serene.bak)
+1. Eseguite il **restore** da SQL Management Studio
 
 ### Installare in IIS
-E' necessario scaricare il package dell'applicazione da qui. Successivamente create una cartella per l'app e decompattate il contenuto del package che avete appena scaricato. Create l'applicazione nella console di IIS e fatela puntare alla cartella creata nel passo precedente. Infine modificate il file Web.Config presente nella root dell'applicazione usando i dati di connessione al db creato al punto **Creare il database**.
+E' necessario scaricare il package dell'applicazione da [qui](https://github.com/gsaielli/cave-serene/raw/master/Deploy.zip). 
+
+Successivamente create una cartella per l'app e decompattate il contenuto del package che avete appena scaricato. Create l'applicazione nella console di IIS e fatela puntare alla cartella appena creata. 
+
+### Modificare il Web.config
+Ora dovete modificate il file Web.Config presente nella root dell'applicazione usando i dati di connessione al db creato al punto **Creare il database**.
+
+```xml
+  <connectionStrings>
+    <add name="Default" connectionString="Data Source=**NOME_VOSTRO_SERVER**;Initial Catalog=CaveSerene;Integrated Security=True" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+```
 
 ### Usare i sorgenti con VS
-Per modificare Cave-Serene è necessario Microsoft Visual Studio (dal 2015, 2017 oppure 2019), anche in versione Community. E' necesario installare [Serenity da qui](https://marketplace.visualstudio.com/items?itemName=VolkanCeylan.SereneSerenityApplicationTemplate). Scaricate i file dei sorgenti usando il pulsante verde **Clone or Download** che si trova in alto a destra. Una volta che i file sono nel vostro computer eseguite in sequenza questi comandi:
-1. Fate click destro sulla Soluzione e poi dat il comando 
+Per modificare Cave-Serene è necessario Microsoft Visual Studio (2015, 2017 oppure 2019), anche in versione Community. E' necesario installare [Serenity da qui](https://marketplace.visualstudio.com/items?itemName=VolkanCeylan.SereneSerenityApplicationTemplate). Scaricate i file dei sorgenti usando il pulsante verde **Clone or Download** che si trova in alto a destra. Una volta che i file sono nel vostro computer eseguite in sequenza questi comandi:
+1. Fate click destro sulla Soluzione e poi date il comando **Restore NuGet Packages**
+1. Eseguite il **rebuild**
+1. Eseguite il comando **Build/Transform all T4 Templates**
+1. A questo punto potete lanciare il programma con **F5** (oppure **CTRL+F5**) 
 
 ## Licenza d'uso di Cave-Serene
+Cave-Serene è un software Open Source rilasciato in licenza [GNU General Public License 3](https://github.com/gsaielli/cave-serene/blob/master/LICENSE)
 
 ## Consulting
-
+Se desiderate collaborare allo sviluppo di Cave-Serene potete contribuire in molti modi diversi. Ad esempio segnalando bug e migliorie del software oppure della documentazione. Sarò felice di aiutarvi ad implementare Cave-Serene nel Vs. Ente. Contatatemi per ulteriori informazioni al +39 329.315.68.21. 
 
 :+1: Ultimo aggiornamento: 31 maggio 2019
