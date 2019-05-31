@@ -3,9 +3,11 @@ Cave-Serene è un **Catasto SPERIMENTALE di Attività Minerarie** multipiattafor
 
 ![Schermata 1](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s1.png)
 
-La parola **sperimentale** si riferisce al fatto che il database potrebbe essere considerato semplificato rispetto alle aspettative di un dato Ente e alcune funzionalità (ad es. il GIS) sono sviluppate solo a livello embrionale. Tuttavia il sistema è facile da modificare e quindi adatto per costituire la **base per un serio utilizzo professionale**. Inoltre il codice è generato automaticamente (v. oltre) e ciò rende l'applicazione molto uniforme, gradevole, veloce, compatibile e facile da usare. Fatevi un'idea da soli, provate il demo [qui](http://caveserene.aielli.net).
+La parola **sperimentale** si riferisce al fatto che il database potrebbe essere considerato semplificato rispetto alle aspettative di un dato Ente e alcune funzionalità (ad es. il GIS) sono sviluppate solo a livello embrionale. Tuttavia il sistema è facile da modificare e quindi adatto per costituire la **base per un serio utilizzo professionale**. Inoltre il codice è generato automaticamente (v. oltre) e ciò rende l'applicazione molto uniforme, gradevole, veloce, compatibile e facile da usare. 
 
-Inizialmente Cave-Serene è stata realizzata per valutare le potenzialità del tool Serenity, all'interno della mia attività di Ingegnere ICT Libero Professionista. Ho utilizzato nozioni catastali e minerarie non banali apprese in anni di consulenza prestata per un importante Ente Pubblico. Tuttavia **non mi considero un esperto del settore** e non mi assumo responsabilità per l'uso del programma, come dice anche la licenza d'uso che accettate implicitamente usando questo software.
+Fatevi un'idea da soli, provate il demo [qui](http://caveserene.aielli.net).
+
+NOTA: Inizialmente Cave-Serene è stata realizzata per valutare le potenzialità del tool Serenity, esclusivamente **all'interno della mia attività di Ingegnere ICT Libero Professionista**. Ho potuto utilizzare nozioni catastali e minerarie non banali apprese in anni di consulenza, tuttavia **non mi considero un esperto del settore** e non mi assumo responsabilità per l'uso del programma, come dice anche la licenza d'uso che accettate implicitamente usando questo software.
 
 ## Funzionalità
 La versione attuale di Cave-Serene include le seguenti macroaree: **Pianificazione** (gestione di PIAE e Aree Estrattive), **Autorizzazione** (Soggetti Esercenti, Cave, Miniere, Impianti, Autorizzazioni e Concessioni) e **Rendicontazione**. La macroarea **Controlli** (Stampe, ISTAT e Polizia Mineraria) NON è stata ancora sviluppata.
@@ -21,7 +23,7 @@ Il processo autorizzativo si svolge col rilascio di una **Autorizzazione** che v
 ![Schermata 3](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s3.png)
 
 ### Rendicontazione
-Il processo di rendicontazione è relativo alle Cave, Miniere e, per quanto riguarda i dati statistici agli Impianti. Sono inclusi dati dei **Materiali Estratti, Inutilizzati, Mezzi Produtivi ed Energia**.
+Il processo di rendicontazione è relativo alle Cave, Miniere e, per quanto riguarda i dati statistici, agli Impianti. Sono inclusi dati dei **Materiali Estratti, Inutilizzati, Mezzi Produttivi ed Energia**.
 
 ![Schermata 4](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s4.png)
 
@@ -34,7 +36,7 @@ E' integrato anche un semplice **sistema cartografico**.
 I dati di Autorizzazione e Rendicontazione sono **pienamente sufficienti per la creazione del report ISTAT**. Tuttavia questa sezione NON è stata ancora implementata.
 
 ## Multipiattaforma
-Al momento Cave-Serene è una applicazione **.Net Framework 4.5 e gira sotto Windows con IIS**; è in corso di preparazione una versione multipiattaforma grazie ad **Asp.Net Core**.  
+Al momento Cave-Serene è una applicazione **.Net Framework 4.5 e gira sotto Windows con IIS**; è in corso di preparazione una versione multipiattaforma con **Asp.Net Core**.  
 
 ### Serenity
 Cave-Serene è stato realizzato con **Visual Studio 2015** (anche Community Edition) e [**Serenity**](https://github.com/volkanceylan/Serenity).
@@ -46,8 +48,7 @@ La versione .Net Core è multipiattaforma e gira sotto Windows, Linux e macOS.
 Al momento i database supportati sono **Microsoft SQL Server, Postgres SQL, MySQL, SQLLite e Oracle**.
 
 ### Compatibilità
-Cave-Serene è una applicazione web **HTML5 responsive**. Come tale essa è compatibile con una gamma molto estesa di dispositivi: computer, tablet e smartphone. 
-Segnalateci eventuali (ed improbabili) incompatibilità [qui](https://github.com/gsaielli/cave-serene/issues).
+Cave-Serene è una applicazione web **HTML5 responsive**. Come tale essa è compatibile con una gamma molto estesa di dispositivi: computer, tablet e smartphone. Segnalateci eventuali (ed improbabili) incompatibilità [qui](https://github.com/gsaielli/cave-serene/issues).
 
 Esempi di visualizzazione dell'**Anagrafica Cave in iPhone 5**  (320x658 pixels):
 
@@ -55,17 +56,16 @@ Esempi di visualizzazione dell'**Anagrafica Cave in iPhone 5**  (320x658 pixels)
 ![Schermata 7](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s7.png)
 
 ## Stato attuale di Cave-Serene
-Le funzionalità implementate **sono funzionanti al 100%** anche se test molto estesi non sono stati effettuati. 
-Segnalateci eventuali errori [qui](https://github.com/gsaielli/cave-serene/issues).
+Le funzionalità implementate **sono funzionanti al 100%** anche se test molto estesi non sono stati effettuati. Segnalateci eventuali errori [qui](https://github.com/gsaielli/cave-serene/issues).
 
 ## Demo online
 Il demo online si trova [qui](http://caveserene.aielli.net). Potete modificare i dati a piacimento ma il database viene rigenerato periodicamente.
 
 ## Come installare o modificare Cave-Serene 
-ATTENZIONE: **le istruzioni che seguono si riferiscono esclusivamente all'installazione sotto Windows con database SQL Server**. E' necessario avere una certa pratica.
+ATTENZIONE: **le istruzioni che seguono si riferiscono esclusivamente all'installazione sotto Windows con database SQL Server**. E' necessaria una certa pratica.
 
 ### Creare il database
-Potete creare il database in due modi differenti. E' comunque necessario l'accesso con **privilegi dba** ad un server **Microsoft SQL Server** (qualunque versione va bene, anche non molto recente).
+Potete creare il database in due modi differenti. In entrambi i casi è comunque necessario l'accesso con **privilegi dba** ad un server **Microsoft SQL Server** (qualunque versione va bene, anche non molto recente).
 
 **Modo 1**: usare uno script di creazione
 1. **Scaricare lo script** di creazione del database da [qui](https://github.com/gsaielli/cave-serene/raw/master/cave-serene-create-script.sql)
@@ -108,6 +108,6 @@ Cave-Serene è un software Open Source rilasciato in licenza [GNU General Public
 ## Consulting
 Se desiderate collaborare allo sviluppo di Cave-Serene, potete contribuire ad esempio segnalando bug e migliorie del software oppure della documentazione. 
 
-Sarò felice di aiutarvi ad implementare Cave-Serene nel Vs. Ente. Contatatemi al +39 329.315.68.21. 
+Sarò felice di aiutarvi ad implementare Cave-Serene nel Vs. Ente. Contattatemi al +39 329.315.68.21. 
 
 :+1: Ultimo aggiornamento: 31 maggio 2019
