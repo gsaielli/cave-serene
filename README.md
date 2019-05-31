@@ -3,7 +3,7 @@ Cave-Serene è un **Catasto SPERIMENTALE di Attività Minerarie** multipiattafor
 
 ![Schermata 1](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s1.png)
 
-La parola **sperimentale** si riferisce al fatto che il database potrebbe essere considerato semplificato rispetto alle aspettative di un dato Ente e alcune funzionalità (ad es. il GIS) sono sviluppate solo a livello embrionale. Tuttavia il sistema è facile da modificare e quindi adatto per costituire la **base per un serio utilizzo professionale**. Inoltre il codice è generato automaticamente (v. oltre) e ciò rende l'applicazione molto uniforme, gradevole, veloce, compatibile e facile da usare. Fatevi un'idea da soli, provate il demo.
+La parola **sperimentale** si riferisce al fatto che il database potrebbe essere considerato semplificato rispetto alle aspettative di un dato Ente e alcune funzionalità (ad es. il GIS) sono sviluppate solo a livello embrionale. Tuttavia il sistema è facile da modificare e quindi adatto per costituire la **base per un serio utilizzo professionale**. Inoltre il codice è generato automaticamente (v. oltre) e ciò rende l'applicazione molto uniforme, gradevole, veloce, compatibile e facile da usare. Fatevi un'idea da soli, provate il demo [qui](http://caveserene.aielli.net).
 
 Inizialmente Cave-Serene è stata realizzata per valutare le potenzialità del tool Serenity, all'interno della mia attività di Ingegnere ICT Libero Professionista. Ho utilizzato nozioni catastali e minerarie non banali apprese in anni di consulenza prestata per un importante Ente Pubblico. Tuttavia **non mi considero un esperto del settore** e non mi assumo responsabilità per l'uso del programma, come dice anche la licenza d'uso che accettate implicitamente usando questo software.
 
@@ -62,15 +62,15 @@ Segnalateci eventuali errori [qui](https://github.com/gsaielli/cave-serene/issue
 Il demo online si trova [qui](http://caveserene.aielli.net). Potete modificare i dati a piacimento ma il database viene rigenerato periodicamente.
 
 ## Come installare o modificare Cave-Serene 
-ATTENZIONE: **le istruzioni che seguono si riferiscono esclusivamente all'installazione sotto Windows con database SQL Server**. E' necessario avere una certa pratica da sistemita o programmatore (essere capaci di creare database SQL e applicazioni IIS e di modificare il web.config per quanto riguarda la stringa di connessione del db).
+ATTENZIONE: **le istruzioni che seguono si riferiscono esclusivamente all'installazione sotto Windows con database SQL Server**. E' necessario avere una certa pratica.
 
 ### Creare il database
-Potete creare il database in due modi differenti. E' necessario l'accesso con **privilegi dba** ad un server **Microsoft SQL Server** (qualunque versione va bene, anche non molto recente).
+Potete creare il database in due modi differenti. E' comunque necessario l'accesso con **privilegi dba** ad un server **Microsoft SQL Server** (qualunque versione va bene, anche non molto recente).
 
 **Modo 1**: usare uno script di creazione
 1. **Scaricare lo script** di creazione del database da [qui](https://github.com/gsaielli/cave-serene/raw/master/cave-serene-create-script.sql)
 1. Aprire una finestra di query in **SQL Management Studio**
-1. **Eseguire lo script**
+1. **Eseguite lo script**
 
 **Modo 2**: restore di un db già pronto
 1. **Scaricare il database** da [qui](https://github.com/gsaielli/cave-serene/raw/master/cave-serene.bak)
@@ -86,20 +86,21 @@ Ora dovete modificate il file Web.Config presente nella root dell'applicazione u
 
 ```xml
   <connectionStrings>
-    <add name="Default" connectionString="Data Source=**NOME_VOSTRO_SERVER**;Initial Catalog=CaveSerene;Integrated Security=True" providerName="System.Data.SqlClient" />
+    <add name="Default" connectionString="Data Source=NOME_VOSTRO_SERVER;Initial Catalog=CaveSerene;Integrated Security=True" providerName="System.Data.SqlClient" />
   </connectionStrings>
 ```
 
 ### Usare i sorgenti con VS
-Per modificare Cave-Serene è necessario **Microsoft Visual Studio** (2015, 2017 oppure 2019), anche in versione Community. E' necessario installare anche [Serenity, da qui](https://marketplace.visualstudio.com/items?itemName=VolkanCeylan.SereneSerenityApplicationTemplate). 
+Per modificare Cave-Serene è necessario **Microsoft Visual Studio** (2015, 2017 oppure 2019, anche in versione Community). E' necessario installare anche il tool [Serenity](https://marketplace.visualstudio.com/items?itemName=VolkanCeylan.SereneSerenityApplicationTemplate). 
 
-Scaricate i file dei sorgenti usando il pulsante verde **Clone or Download** che si trova in alto a destra. 
+Successivamente scaricate i file dei sorgenti usando il pulsante verde **Clone or Download** che si trova in alto a destra. 
 
 Una volta che i file sono nel vostro computer eseguite in sequenza questi comandi:
-1. Fate click destro sulla Soluzione e poi date il comando **Restore NuGet Packages**
+1. Aprite la Soluzione in **Visual Studio**
+1. Fate click destro sulla Soluzione e date il comando **Restore NuGet Packages**
 1. Eseguite il **rebuild**
-1. Eseguite il comando **Build/Transform all T4 Templates**
-1. A questo punto potete lanciare il programma con **F5** (oppure **CTRL+F5**) 
+1. Eseguite dal menù il comando **Build/Transform all T4 Templates**
+1. Al termine potete lanciare il programma con **F5** (oppure **CTRL+F5**) 
 
 ## Licenza d'uso di Cave-Serene
 Cave-Serene è un software Open Source rilasciato in licenza [GNU General Public License 3](https://github.com/gsaielli/cave-serene/blob/master/LICENSE)
@@ -107,6 +108,6 @@ Cave-Serene è un software Open Source rilasciato in licenza [GNU General Public
 ## Consulting
 Se desiderate collaborare allo sviluppo di Cave-Serene, potete contribuire ad esempio segnalando bug e migliorie del software oppure della documentazione. 
 
-Sarò felice di aiutarvi ad implementare Cave-Serene nel Vs. Ente. Contatatemi per ulteriori informazioni al +39 329.315.68.21. 
+Sarò felice di aiutarvi ad implementare Cave-Serene nel Vs. Ente. Contatatemi al +39 329.315.68.21. 
 
 :+1: Ultimo aggiornamento: 31 maggio 2019
