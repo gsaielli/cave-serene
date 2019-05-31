@@ -13,18 +13,23 @@ La versione attuale di Cave Serene include le seguenti macroaree: Pianificazione
 ![Schermata 1](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s1.png)
 
 ### Pianificazione
-
+![Schermata 2](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s2.png)
 ### Autorizzazione
-
+![Schermata 3](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s3.png)
 ### Rendicontazione
-
+![Schermata 4](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s4.png)
+### GIS
+![Schermata 5](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s5.png)
 ### ISTAT e altro
+Questa sezione NON è stata implementata.
 
 ## Multipiattaforma
 ### Serenity
 ### Piattaforme supportate
 ### Database supportati
 ### Compatibilità
+![Schermata 6](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s6.png)
+![Schermata 7](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s7.png)
 ## Stato attuale di Cave-Serene
 ## Demo online
 ## Come installare o modificare Cave-Serene 
