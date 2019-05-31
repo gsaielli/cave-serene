@@ -26,6 +26,8 @@ Questa sezione NON è stata implementata.
 ## Multipiattaforma
 ### Serenity
 ### Piattaforme supportate
+![Schermata 6](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s6.png)
+![Schermata 7](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s7.png)
 ### Database supportati
 ### Compatibilità
 
