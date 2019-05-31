@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveSerene", "CaveSerene\CaveSerene\CaveSerene.csproj", "{E298DC33-D240-4585-AC47-775575246780}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveSereneTests", "CaveSerene\CaveSereneTests\CaveSereneTests.csproj", "{F6083F2D-A131-4D58-A2E2-02745D770DAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{C089412E-A932-44A5-91E3-EDA7DBC10B73}"
+	ProjectSection(SolutionItems) = preProject
+		backup.sql = backup.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E298DC33-D240-4585-AC47-775575246780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E298DC33-D240-4585-AC47-775575246780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E298DC33-D240-4585-AC47-775575246780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E298DC33-D240-4585-AC47-775575246780}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6083F2D-A131-4D58-A2E2-02745D770DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6083F2D-A131-4D58-A2E2-02745D770DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6083F2D-A131-4D58-A2E2-02745D770DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6083F2D-A131-4D58-A2E2-02745D770DAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+﻿backup database CaveSerene to disk = 'c:\users\giuse\source\repos\caveserene\db.bak'

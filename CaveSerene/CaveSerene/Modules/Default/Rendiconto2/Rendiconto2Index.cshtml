@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Rendiconti Miiere";//Serenity.LocalText.Get("Db.Default.Rendiconto2.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new CaveSerene.Default.Rendiconto2Grid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>
