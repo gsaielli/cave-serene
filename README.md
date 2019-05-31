@@ -28,8 +28,7 @@ Questa sezione NON è stata implementata.
 ### Piattaforme supportate
 ### Database supportati
 ### Compatibilità
-![Schermata 6](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s6.png)
-![Schermata 7](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s7.png)
+
 ## Stato attuale di Cave-Serene
 ## Demo online
 ## Come installare o modificare Cave-Serene 
