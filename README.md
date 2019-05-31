@@ -10,6 +10,8 @@ Buon lavoro.
 ## Funzionalità
 La versione attuale di Cave Serene include le seguenti macroaree: Pianificazione (gestione di PIAE e Aree Estrattive), Autorizzazione (Soggetti Esercenti, Cave, Miniere, Impianti, Autorizzazioni e Concessioni) e Rendicontazione. La macroarea Controlli (Stampe, ISTAT e Polizia Mineraria) NON è stata sviluppata.
 
+![Schermata 1](https://github.com/gsaielli/cave-serene/blob/master/Screenshots/s1.png)
+
 ### Pianificazione
 
 ### Autorizzazione
@@ -30,8 +32,5 @@ La versione attuale di Cave Serene include le seguenti macroaree: Pianificazione
 ### Installare in IIS
 ## Licenza d'uso di Cave-Serene
 ## Consulting
-
-
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 :+1: Ultimo aggiornamento: 31 maggio 2019
