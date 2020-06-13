@@ -70,6 +70,7 @@ Potete creare il database in due modi differenti. In entrambi i casi è comunque
 **Modo 1**: usare uno script di creazione
 1. **Scaricare lo script** di creazione del database da [qui](https://github.com/gsaielli/cave-serene/raw/master/cave-serene-create-script.sql)
 1. Aprire una finestra di query in **SQL Management Studio**
+1. Cambiare il PATH *C:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\* con il vostro percorso di installazione di SQL Server.
 1. **Eseguite lo script**
 
 **Modo 2**: restore di un db già pronto
