@@ -39,7 +39,7 @@ I dati di Autorizzazione e Rendicontazione sono **pienamente sufficienti per la 
 Al momento Cave-Serene è una applicazione **.Net Framework 4.5 e gira sotto Windows con IIS**; è in corso di preparazione una versione multipiattaforma con **Asp.Net Core**.  
 
 ### Serenity
-Cave-Serene è stato realizzato con **Visual Studio 2015** (anche Community Edition) e [**Serenity**](https://github.com/volkanceylan/Serenity).
+Cave-Serene è stato realizzato con **Visual Studio 2015** (anche Community Edition) e [**Serenity**](https://github.com/volkanceylan/Serenity). L'ultima versione è stata modificata con **Visual Studio 2019 CE**
 
 ### Piattaforme supportate
 La versione .Net Core è multipiattaforma e gira sotto Windows, Linux e macOS.
@@ -59,22 +59,23 @@ Esempi di visualizzazione dell'**Anagrafica Cave in iPhone 5**  (320x658 pixels)
 Le funzionalità implementate **sono funzionanti al 100%** anche se test molto estesi non sono stati effettuati. Segnalateci eventuali errori [qui](https://github.com/gsaielli/cave-serene/issues).
 
 ## Demo online
-Il demo online si trova [qui](http://caveserene.aielli.net). Potete modificare i dati a piacimento ma il database viene rigenerato periodicamente.
+Il demo online non è più disponibile.
 
 ## Come installare o modificare Cave-Serene 
 ATTENZIONE: **le istruzioni che seguono si riferiscono esclusivamente all'installazione sotto Windows con database SQL Server**. E' necessaria una certa pratica.
 
 ### Creare il database
-Potete creare il database in due modi differenti. In entrambi i casi è comunque necessario l'accesso con **privilegi dba** ad un server **Microsoft SQL Server** (qualunque versione va bene, anche non molto recente).
+Potete creare il database come volete. Qualunque versione di SQL Server va bene, anche non molto recente.
 
 **Modo 1**: usare uno script di creazione
-1. **Scaricare lo script** di creazione del database da [qui](https://github.com/gsaielli/cave-serene/raw/master/cave-serene-create-script.sql)
-1. Aprire una finestra di query in **SQL Management Studio**
+1. **Scaricare lo script** di creazione del database da [qui](https://github.com/gsaielli/cave-serene/blob/master/CreaDatabase.sql)
+1. Aprire una finestra di query 
 1. **Eseguite lo script**
+1. **Scaricare lo script** di creazione dei dati di esempio [qui](https://github.com/gsaielli/cave-serene/blob/master/CreaDati.sql) (facoltativo ma crea anche l'unico utente e se non lo fate non potrete fare il login)
 
 **Modo 2**: restore di un db già pronto
 1. **Scaricare il database** da [qui](https://github.com/gsaielli/cave-serene/raw/master/cave-serene.bak)
-1. Eseguite il **restore** da SQL Management Studio
+1. Eseguite il **restore** da SQL Management Studio (potrebbe non essere compatibile con la vs. versione di SQL Server)
 
 ### Installare in IIS
 1. E' necessario **scaricare il package** dell'applicazione da [qui](https://github.com/gsaielli/cave-serene/raw/master/Deploy.zip). 
@@ -87,6 +88,12 @@ Ora dovete modificate il file Web.Config presente nella root dell'applicazione u
 ```xml
   <connectionStrings>
     <add name="Default" connectionString="Data Source=NOME_VOSTRO_SERVER;Initial Catalog=CaveSerene;Integrated Security=True" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+```
+Se state usando LocalDB in Visual Studio sarà sufficiente:
+```xml
+  <connectionStrings>
+    <add name="Default" connectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=CaveSerene;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" providerName="System.Data.SqlClient"/>
   </connectionStrings>
 ```
 
@@ -108,6 +115,4 @@ Cave-Serene è un software Open Source rilasciato in licenza [GNU General Public
 ## Consulting
 Se desiderate collaborare allo sviluppo di Cave-Serene, potete contribuire ad esempio segnalando bug e migliorie del software oppure della documentazione. 
 
-Sarò felice di aiutarvi ad implementare Cave-Serene nel Vs. Ente. Contattatemi al +39 329.315.68.21. 
-
-:+1: Ultimo aggiornamento: 31 maggio 2019
+:+1: Ultimo aggiornamento: 7 settembre 2020
