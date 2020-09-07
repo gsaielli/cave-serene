@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveSerene", "CaveSerene\CaveSerene\CaveSerene.csproj", "{E298DC33-D240-4585-AC47-775575246780}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{C089412E-A932-44A5-91E3-EDA7DBC10B73}"
 	ProjectSection(SolutionItems) = preProject
 		backup.sql = backup.sql
+		CreaDatabase.sql = CreaDatabase.sql
+		CreaDati.sql = CreaDati.sql
 	EndProjectSection
 EndProject
 Global
@@ -29,5 +31,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1C97929-57AF-4466-8907-0EAC82D4FADF}
 	EndGlobalSection
 EndGlobal
