@@ -12,13 +12,17 @@ namespace CaveSerene.Default.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Autorizzazione]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Autorizzazione")]
     [DisplayName("Concessioni delle Miniere"), InstanceName("Concessione")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class ConcessioneRow : Row, IIdRow, INameRow
     {
-        [Expression("jIdStruttura.[Nome] + '-' + NumeroAtto + ' del ' + convert(nvarchar(50),DataAutorizzazione)"), QuickSearch]
+#if ORACLE
+        [Expression("jIdStruttura.[Nome] || '-' || NumeroAtto || ' del ' || TO_CHAR(DataAutorizzazione)"), QuickSearch]
+#else
+        [Expression("jIdStruttura.[Nome] + '-' + NumeroAtto + ' del ' + convert(varchar(50),DataAutorizzazione)"), QuickSearch]
+#endif
         public String Descrizione
         {
             get { return Fields.Descrizione[this]; }
@@ -32,7 +36,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Esercente"), Column("IDEsercente"), ForeignKey("[dbo].[Esercente]", "ID"), LeftJoin("jIdEsercente"), TextualField("IdEsercenteCodCcia"), NotNull]
+        [DisplayName("Esercente"), Column("IDEsercente"), ForeignKey("Esercente", "ID"), LeftJoin("jIdEsercente"), TextualField("IdEsercenteCodCcia"), NotNull]
         [LookupEditor(typeof(EsercenteRow))]
         public Int32? IdEsercente
         {
@@ -47,7 +51,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.IdEsercenteRagSoc[this] = value; }
         }
 
-        [DisplayName("Miniera"), Column("IDStruttura"), ForeignKey("[dbo].[Struttura]", "ID"), LeftJoin("jIdStruttura"), TextualField("IdStrutturaNome"), NotNull]
+        [DisplayName("Miniera"), Column("IDStruttura"), ForeignKey("Struttura", "ID"), LeftJoin("jIdStruttura"), TextualField("IdStrutturaNome"), NotNull]
         [LookupEditor("Default.Miniera")]
         public Int32? IdStruttura
         {

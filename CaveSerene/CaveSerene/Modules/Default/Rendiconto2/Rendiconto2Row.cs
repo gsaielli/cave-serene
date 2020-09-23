@@ -10,7 +10,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[RendicontoExt]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("RendicontoExt")]
     [DisplayName("Rendiconti delle Miniere"), InstanceName("Rendiconto Miniera")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -23,7 +23,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Concessione"), Column("IDAutorizzazione"), ForeignKey("[dbo].[Autorizzazione]", "ID"), LeftJoin("jIdAutorizzazione"), 
+        [DisplayName("Concessione"), Column("IDAutorizzazione"), ForeignKey("Autorizzazione", "ID"), LeftJoin("jIdAutorizzazione"), 
             TextualField("IdAutorizzazioneNumeroAtto"), NotNull]
         [LookupEditor(typeof(ConcessioneLookup))]
         public Int32? IdAutorizzazione

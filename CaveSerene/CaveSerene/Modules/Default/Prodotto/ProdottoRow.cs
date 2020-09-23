@@ -9,7 +9,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Prodotto]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Prodotto")]
     [DisplayName("Prodotto"), InstanceName("Prodotto")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -22,14 +22,14 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Id Rendiconto"), Column("IDRendiconto"), NotNull, ForeignKey("[dbo].[Rendiconto]", "ID"), LeftJoin("jIdRendiconto")]
+        [DisplayName("Id Rendiconto"), Column("IDRendiconto"), NotNull, ForeignKey("Rendiconto", "ID"), LeftJoin("jIdRendiconto")]
         public Int32? IdRendiconto
         {
             get { return Fields.IdRendiconto[this]; }
             set { Fields.IdRendiconto[this] = value; }
         }
 
-        [DisplayName("Materiale"), Column("IDMateriale"), NotNull, ForeignKey("[dbo].[Materiale]", "ID"), LeftJoin("jIdMateriale"), TextualField("IdMaterialeDescrizione")]
+        [DisplayName("Materiale"), Column("IDMateriale"), NotNull, ForeignKey("Materiale", "ID"), LeftJoin("jIdMateriale"), TextualField("IdMaterialeDescrizione")]
         [LookupEditor(typeof(MaterialeRow))]
         public Int32? IdMateriale
         {

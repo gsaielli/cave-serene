@@ -7,7 +7,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Esercente]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Esercente")]
     [DisplayName("Aziende Esercenti (per Cave e/o Miniere e/o Impianti)"), InstanceName("Esercente")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -70,7 +70,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Frazione[this] = value; }
         }
 
-        [DisplayName("Comune"), Column("IDComune"), Size(6), ForeignKey("[dbo].[Comune]", "ID"), LeftJoin("jIdComune"), TextualField("IdComuneNome")]
+        [DisplayName("Comune"), Column("IDComune"), Size(6), ForeignKey("Comune", "ID"), LeftJoin("jIdComune"), TextualField("IdComuneNome")]
         [LookupEditor(typeof(ComuneRow))]
         public String IdComune
         {

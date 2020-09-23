@@ -9,7 +9,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Piano]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Piano")]
     [DisplayName("PIAE"), InstanceName("PIAE")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -30,7 +30,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Descrizione[this] = value; }
         }
 
-        [DisplayName("Ente Emissione"), Column("IDEnte"), NotNull, ForeignKey("[dbo].[Ente]", "ID"), LeftJoin("jIdEnte"), TextualField("IdEnteNome")]
+        [DisplayName("Ente Emissione"), Column("IDEnte"), NotNull, ForeignKey("Ente", "ID"), LeftJoin("jIdEnte"), TextualField("IdEnteNome")]
         [LookupEditor(typeof(EnteRow), InplaceAdd = true)]
         public string IdEnte
         {

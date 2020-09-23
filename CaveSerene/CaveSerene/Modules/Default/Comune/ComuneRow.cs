@@ -7,7 +7,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Comune]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Comune")]
     [DisplayName("Comune"), InstanceName("Comune")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]

@@ -9,9 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveSereneTests", "CaveSere
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{C089412E-A932-44A5-91E3-EDA7DBC10B73}"
 	ProjectSection(SolutionItems) = preProject
-		backup.sql = backup.sql
-		CreaDatabase.sql = CreaDatabase.sql
-		CreaDati.sql = CreaDati.sql
+		CreaDatabaseORA.sql = CreaDatabaseORA.sql
+		CreaDatabaseSQL.sql = CreaDatabaseSQL.sql
+		CreaDatiDefaultORA.sql = CreaDatiDefaultORA.sql
+		CreaDatiDefaultSQL.sql = CreaDatiDefaultSQL.sql
 	EndProjectSection
 EndProject
 Global

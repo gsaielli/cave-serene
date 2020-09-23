@@ -7,7 +7,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[TipoMateriale]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("TipoMateriale")]
     [DisplayName("Tipi di Materiale"), InstanceName("Tipo Materiale")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]

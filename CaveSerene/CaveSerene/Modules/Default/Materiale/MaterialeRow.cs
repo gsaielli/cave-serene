@@ -8,7 +8,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Materiale]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Materiale")]
     [DisplayName("Materiali"), InstanceName("Materiale")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -29,7 +29,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Descrizione[this] = value; }
         }
 
-        [DisplayName("Tipo Materiale"), Column("IDTipoMateriale"), ForeignKey("[dbo].[TipoMateriale]", "ID"), LeftJoin("jIdTipoMateriale"), 
+        [DisplayName("Tipo Materiale"), Column("IDTipoMateriale"), ForeignKey("TipoMateriale", "ID"), LeftJoin("jIdTipoMateriale"), 
             TextualField("IdTipoMaterialeDescrizione"), QuickSearch]
         [LookupEditor(typeof(TipoMaterialeRow), InplaceAdd = true)]
         public Int32? IdTipoMateriale

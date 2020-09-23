@@ -30,6 +30,7 @@
 
                         data.Add(s.Substring(4), v);
                     }
+                    System.Diagnostics.Debug.WriteLine(exception.Data[key]);
                 }
             };
 

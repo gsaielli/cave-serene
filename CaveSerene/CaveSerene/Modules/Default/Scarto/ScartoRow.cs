@@ -8,7 +8,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Scarto]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Scarto")]
     [DisplayName("Scarto"), InstanceName("Scarto")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -21,7 +21,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [Column("IDRendiconto"), NotNull, ForeignKey("[dbo].[Rendiconto]", "ID"), LeftJoin("jIdRendiconto")]
+        [Column("IDRendiconto"), NotNull, ForeignKey("Rendiconto", "ID"), LeftJoin("jIdRendiconto")]
         public Int32? IdRendiconto
         {
             get { return Fields.IdRendiconto[this]; }

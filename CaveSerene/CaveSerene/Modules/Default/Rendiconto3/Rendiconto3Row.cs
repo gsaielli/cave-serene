@@ -9,7 +9,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Rendiconto]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Rendiconto")]
     [DisplayName("Dati degli Impianti"), InstanceName("Rendiconto Impianto")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -22,7 +22,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Impianto"), Column("IDStruttura"), ForeignKey("[dbo].[Struttura]", "ID"), LeftJoin("jIdStruttura"), TextualField("IdStrutturaNome"), NotNull]
+        [DisplayName("Impianto"), Column("IDStruttura"), ForeignKey("Struttura", "ID"), LeftJoin("jIdStruttura"), TextualField("IdStrutturaNome"), NotNull]
         [LookupEditor(typeof(ImpiantoRow))]
         public Int32? IdStruttura
         {

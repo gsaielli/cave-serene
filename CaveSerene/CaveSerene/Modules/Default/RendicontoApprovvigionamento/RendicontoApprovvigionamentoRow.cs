@@ -9,7 +9,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[RendicontoApprovvigionamento]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("RendicontoApprovvigionamento")]
     [DisplayName("Rendiconto Approvvigionamento"), InstanceName("Rendiconto Approvvigionamento")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -22,7 +22,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Id Rendiconto"), Column("IDRendiconto"), NotNull, ForeignKey("[dbo].[Rendiconto]", "ID"), LeftJoin("jIdRendiconto")]
+        [DisplayName("Id Rendiconto"), Column("IDRendiconto"), NotNull, ForeignKey("Rendiconto", "ID"), LeftJoin("jIdRendiconto")]
         public Int32? IdRendiconto
         {
             get { return Fields.IdRendiconto[this]; }
@@ -36,7 +36,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.TipoApprovvigionamento[this] = (int)value; }
         }
 
-        [DisplayName("Id Struttura Cava"), Column("IDStrutturaCava"), ForeignKey("[dbo].[Struttura]", "ID"), LeftJoin("jIdStrutturaCava")]
+        [DisplayName("Id Struttura Cava"), Column("IDStrutturaCava"), ForeignKey("Struttura", "ID"), LeftJoin("jIdStrutturaCava")]
         public Int32? IdStrutturaCava
         {
             get { return Fields.IdStrutturaCava[this]; }

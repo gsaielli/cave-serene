@@ -6,28 +6,32 @@
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Fabbisogno]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Fabbisogno")]
     [DisplayName("Fabbisogno"), InstanceName("Fabbisogno")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     [UniqueConstraint("IdPiano", "IDMateriale")]
     public sealed class FabbisognoRow : Row, IIdRow
     {
-        [DisplayName("Id"), Expression("convert(nvarchar(50),IDPiano) + '-' + convert(nvarchar(50),IdMateriale)")]
+#if ORACLE
+        [DisplayName("Id"), Expression("TO_CHAR(IDPiano) || '-' || TO_CHAR(IdMateriale)")]
+#else
+        [DisplayName("Id"), Expression("convert(varchar(50),IDPiano) + '-' + convert(varchar(50),IdMateriale)")]
+#endif
         public String Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Id Piano"), Column("IDPiano"), PrimaryKey, ForeignKey("[dbo].[Piano]", "ID"), LeftJoin("jIdPiano")]
+        [DisplayName("Id Piano"), Column("IDPiano"), PrimaryKey, ForeignKey("Piano", "ID"), LeftJoin("jIdPiano")]
         public Int32? IdPiano
         {
             get { return Fields.IdPiano[this]; }
             set { Fields.IdPiano[this] = value; }
         }
 
-        [DisplayName("Materiale"), Column("IDMateriale"), PrimaryKey, ForeignKey("[dbo].[Materiale]", "ID"), LeftJoin("jIdMateriale"), TextualField("IdMaterialeDescrizione")]
+        [DisplayName("Materiale"), Column("IDMateriale"), PrimaryKey, ForeignKey("Materiale", "ID"), LeftJoin("jIdMateriale"), TextualField("IdMaterialeDescrizione")]
         [LookupEditor(typeof(MaterialeRow), InplaceAdd = true)]
         public Int32? IdMateriale
         {

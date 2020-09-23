@@ -8,7 +8,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Area]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Area")]
     [DisplayName("Aree Estrattive"), InstanceName("Area Estrattiva")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]

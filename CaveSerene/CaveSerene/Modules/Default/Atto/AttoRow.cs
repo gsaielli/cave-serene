@@ -8,7 +8,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Atto]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Atto")]
     [DisplayName("Atto"), InstanceName("Atto")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -36,7 +36,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.DataAtto[this] = value; }
         }
 
-        [DisplayName("Id Piano"), Column("IDPiano"), NotNull, ForeignKey("[dbo].[Piano]", "ID"), LeftJoin("jIdPiano"), TextualField("IdPianoDescrizione")]
+        [DisplayName("Id Piano"), Column("IDPiano"), NotNull, ForeignKey("Piano", "ID"), LeftJoin("jIdPiano"), TextualField("IdPianoDescrizione")]
         public Int32? IdPiano
         {
             get { return Fields.IdPiano[this]; }

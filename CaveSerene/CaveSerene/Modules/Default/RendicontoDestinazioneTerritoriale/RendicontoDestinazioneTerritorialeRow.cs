@@ -9,20 +9,24 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[RendicontoDestinazioneTerritoriale]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("RendicontoDestinazioneTerritoriale")]
     [DisplayName("Rendiconto Destinazione Territoriale"), InstanceName("Rendiconto Destinazione Territoriale")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class RendicontoDestinazioneTerritorialeRow : Row, IIdRow
     {
-        [DisplayName("Id"), Expression("convert(nvarchar(50),IDRendiconto) + '-' + convert(nvarchar(50),TipoDestinazioneTerritoriale)")]
+#if ORACLE
+        [DisplayName("Id"), Expression("TO_CHAR(IDRendiconto) || '-' || TO_CHAR(TipoDestinazioneTerritoriale)")]
+#else
+        [DisplayName("Id"), Expression("convert(varchar(50),IDRendiconto) + '-' + convert(varchar(50),TipoDestinazioneTerritoriale)")]
+#endif
         public String Id
         {
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
 
-        [Column("IDRendiconto"), NotNull, PrimaryKey, ForeignKey("[dbo].[Rendiconto]", "ID"), LeftJoin("jIdRendiconto")]
+        [Column("IDRendiconto"), NotNull, PrimaryKey, ForeignKey("Rendiconto", "ID"), LeftJoin("jIdRendiconto")]
         public Int32? IdRendiconto
         {
             get { return Fields.IdRendiconto[this]; }

@@ -8,7 +8,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Miniera]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Miniera")]
     [DisplayName("Miniere"), InstanceName("Miniera")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -22,7 +22,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Comune"), Column("IDComune"), Size(6), ForeignKey("[dbo].[Comune]", "ID"), LeftJoin("jIdComune"), TextualField("IdComuneNome"), NotNull]
+        [DisplayName("Comune"), Column("IDComune"), Size(6), ForeignKey("Comune", "ID"), LeftJoin("jIdComune"), TextualField("IdComuneNome"), NotNull]
         [LookupEditor(typeof(ComuneRow))]
         public String IdComune
         {

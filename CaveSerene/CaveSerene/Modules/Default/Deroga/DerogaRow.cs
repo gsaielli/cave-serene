@@ -7,7 +7,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Deroga]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Deroga")]
     [DisplayName("Deroga"), InstanceName("Deroga")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -20,7 +20,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Id Autorizzazione"), Column("IDAutorizzazione"), NotNull, ForeignKey("[dbo].[Autorizzazione]", "ID"), LeftJoin("jIdAutorizzazione"), TextualField("IdAutorizzazioneNumeroAtto")]
+        [DisplayName("Id Autorizzazione"), Column("IDAutorizzazione"), NotNull, ForeignKey("Autorizzazione", "ID"), LeftJoin("jIdAutorizzazione"), TextualField("IdAutorizzazioneNumeroAtto")]
         public Int32? IdAutorizzazione
         {
             get { return Fields.IdAutorizzazione[this]; }

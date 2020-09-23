@@ -7,7 +7,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Potenziale]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Potenziale")]
     [DisplayName("Potenziale"), InstanceName("Potenziale")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -20,7 +20,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Id Materiale"), Column("IDMateriale"), ForeignKey("[dbo].[Materiale]", "ID"), LeftJoin("jIdMateriale"), TextualField("IdMaterialeDescrizione")]
+        [DisplayName("Id Materiale"), Column("IDMateriale"), ForeignKey("Materiale", "ID"), LeftJoin("jIdMateriale"), TextualField("IdMaterialeDescrizione")]
         [LookupEditor(typeof(MaterialeRow))]
         public Int32? IdMateriale
         {
@@ -28,7 +28,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.IdMateriale[this] = value; }
         }
 
-        [DisplayName("Id Piano Area"), Column("IDPianoArea"), ForeignKey("[dbo].[PianoArea]", "ID"), LeftJoin("jIdPianoArea"), Updatable(false)]
+        [DisplayName("Id Piano Area"), Column("IDPianoArea"), ForeignKey("PianoArea", "ID"), LeftJoin("jIdPianoArea"), Updatable(false)]
         public Int32? IdPianoArea
         {
             get { return Fields.IdPianoArea[this]; }

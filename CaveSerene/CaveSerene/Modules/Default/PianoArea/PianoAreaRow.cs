@@ -9,7 +9,7 @@ namespace CaveSerene.Default.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[PianoArea]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("PianoArea")]
     [DisplayName("xxx"), InstanceName("Potenziale dell'Area")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
@@ -23,7 +23,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [Column("IDPiano"), NotNull, ForeignKey("[dbo].[Piano]", "ID"), LeftJoin("jIdPiano"), TextualField("IdPianoDescrizione"), LookupInclude]
+        [Column("IDPiano"), NotNull, ForeignKey("Piano", "ID"), LeftJoin("jIdPiano"), TextualField("IdPianoDescrizione"), LookupInclude]
         public Int32? IdPiano
         {
             get { return Fields.IdPiano[this]; }

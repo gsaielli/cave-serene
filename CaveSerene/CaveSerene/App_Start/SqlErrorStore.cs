@@ -227,16 +227,17 @@ Update Exceptions
                     }
                     else
                     {
+                        var inQuery = new SqlQuery()
+                                .Dialect(c.GetDialect())
+                                .Select("[Id]")
+                                .From("Exceptions")
+                                .Take(1)
+                                .Where(hashMatch); 
+                        var criteria = new Criteria("[Id]").In(new Criteria("(" + inQuery.Text.Replace("SELECT *", "SELECT Id") + ")"));
                         var update = new SqlUpdate("Exceptions")
+                            .Dialect(c.GetDialect())
                             .SetTo("DuplicateCount", "[DuplicateCount] + @DuplicateCount")
-                            .Where(new Criteria("[Id]").In(new Criteria("(" +
-                                new SqlQuery()
-                                    .Dialect(c.GetDialect())
-                                    .Select("[Id]")
-                                    .From("Exceptions")
-                                    .Take(1)
-                                    .Where(hashMatch))) + ")");
-
+                            .Where(criteria);
 
                         update.SetParam("@DuplicateCount", error.DuplicateCount);
                         update.SetParam("@ErrorHash", error.ErrorHash);
@@ -259,7 +260,11 @@ Update Exceptions
                             q.SetParam("@ApplicationName", error.ApplicationName.Truncate(50));
                             q.SetParam("@minDate", DateTime.UtcNow.Add(RollupThreshold.Value.Negate()));
 
+#if ORACLE
+                            error.GUID = new Guid(c.Query(q).First().GUID);
+#else
                             error.GUID = c.Query<Guid>(q).First();
+#endif
 
                             return;
                         }
@@ -267,13 +272,37 @@ Update Exceptions
 
                     error.FullJson = error.ToJson();
 
+#if ORACLE
+
+                    var insert = new SqlInsert("Exceptions")
+                        .Set("ApplicationName", error.ApplicationName.Truncate(50))
+                        .Set("MachineName", error.MachineName.Truncate(50))
+                        .Set("CreationDate", error.CreationDate)
+                        .Set("Type", error.Type.Truncate(100))
+                        .Set("IsProtected", error.IsProtected)
+                        .Set("Host", error.Host.Truncate(100))
+                        .Set("Url", error.Url.Truncate(500))
+                        .Set("HTTPMethod", error.HTTPMethod.Truncate(10))
+                        .Set("IPAddress", error.IPAddress)
+                        .Set("Source", error.Source.Truncate(100))
+                        .Set("Message", error.Message.Truncate(1000))
+                        .Set("Detail", error.Detail)
+                        .Set("StatusCode", error.StatusCode)
+                        .Set("SQL", error.SQL)
+                        .Set("FullJson", error.FullJson)
+                        .Set("ErrorHash", error.ErrorHash)
+                        .Set("DuplicateCount", error.DuplicateCount);
+
+                    insert.Execute(c);
+
+#else
                     c.Execute(@"
 Insert Into Exceptions ([GUID], [ApplicationName], [MachineName], [CreationDate], [Type], [IsProtected], [Host], [Url], [HTTPMethod], [IPAddress], [Source], [Message], [Detail], [StatusCode], [SQL], [FullJson], [ErrorHash], [DuplicateCount])
 Values (@GUID, @ApplicationName, @MachineName, @CreationDate, @Type, @IsProtected, @Host, @Url, @HTTPMethod, @IPAddress, @Source, @Message, @Detail, @StatusCode, @SQL, @FullJson, @ErrorHash, @DuplicateCount)",
                         new
                         {
                             error.GUID,
-                            ApplicationName = error.ApplicationName.Truncate(50),
+                    ApplicationName = error.ApplicationName.Truncate(50),
                             MachineName = error.MachineName.Truncate(50),
                             error.CreationDate,
                             Type = error.Type.Truncate(100),
@@ -291,6 +320,10 @@ Values (@GUID, @ApplicationName, @MachineName, @CreationDate, @Type, @IsProtecte
                             error.ErrorHash,
                             error.DuplicateCount
                         });
+
+#endif
+
+
                 }
             }
         }

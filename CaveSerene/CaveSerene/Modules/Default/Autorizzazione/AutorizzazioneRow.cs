@@ -12,13 +12,17 @@ namespace CaveSerene.Default.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("Default"), Module("Default"), TableName("[dbo].[Autorizzazione]")]
+    [ConnectionKey("Default"), Module("Default"), TableName("Autorizzazione")]
     [DisplayName("Autorizzazioni delle Cave"), InstanceName("Autorizzazione")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]
     public sealed class AutorizzazioneRow : Row, IIdRow, INameRow
     {
-        [Expression("jIdStruttura.[Nome] + '-' + NumeroAtto + ' del ' + convert(nvarchar(50),DataAutorizzazione)"), QuickSearch]
+#if ORACLE
+        [Expression("jIdStruttura.[Nome] || '-' || NumeroAtto || ' del ' || TO_CHAR(DataAutorizzazione)"), QuickSearch]
+#else
+        [Expression("jIdStruttura.[Nome] + '-' + NumeroAtto + ' del ' + convert(varchar(50),DataAutorizzazione)"), QuickSearch]
+#endif
         public String Descrizione
         {
             get { return Fields.Descrizione[this]; }
@@ -32,7 +36,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Esercente"), Column("IDEsercente"), ForeignKey("[dbo].[Esercente]", "ID"), LeftJoin("jIdEsercente"), TextualField("IdEsercenteCodCcia"), NotNull]
+        [DisplayName("Esercente"), Column("IDEsercente"), ForeignKey("Esercente", "ID"), LeftJoin("jIdEsercente"), TextualField("IdEsercenteCodCcia"), NotNull]
         [LookupEditor(typeof(EsercenteRow))]
         public Int32? IdEsercente
         {
@@ -47,14 +51,14 @@ namespace CaveSerene.Default.Entities
             set { Fields.IdEsercenteRagSoc[this] = value; }
         }
 
-        [DisplayName("PIAE"), Column("IDPiano"), ForeignKey("[dbo].[Piano]", "ID"), LeftJoin("jIdPiano")]
+        [DisplayName("PIAE"), Column("IDPiano"), ForeignKey("Piano", "ID"), LeftJoin("jIdPiano")]
         public Int32? IdPiano
         {
             get { return Fields.IdPiano[this]; }
             set { Fields.IdPiano[this] = value; }
         }
 
-        [DisplayName("Area Estrattiva"), Column("IDPianoArea"), ForeignKey("[dbo].[PianoArea]", "ID"), LeftJoin("jIdPianoArea")]
+        [DisplayName("Area Estrattiva"), Column("IDPianoArea"), ForeignKey("PianoArea", "ID"), LeftJoin("jIdPianoArea")]
 
         public Int32? IdPianoArea
         {
@@ -62,7 +66,7 @@ namespace CaveSerene.Default.Entities
             set { Fields.IdPianoArea[this] = value; }
         }
 
-        [DisplayName("Cava"), Column("IDStruttura"), ForeignKey("[dbo].[Struttura]", "ID"), LeftJoin("jIdStruttura"), TextualField("IdStrutturaNome"), NotNull]
+        [DisplayName("Cava"), Column("IDStruttura"), ForeignKey("Struttura", "ID"), LeftJoin("jIdStruttura"), TextualField("IdStrutturaNome"), NotNull]
         [LookupEditor(typeof(CavaRow))]
         public Int32? IdStruttura
         {
