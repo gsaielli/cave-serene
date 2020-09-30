@@ -3654,7 +3654,7 @@ var CaveSerene;
                     }
                     this.setItems(this.getItems());
                 },
-                enumerable: true,
+                enumerable: false,
                 configurable: true
             });
             Object.defineProperty(PermissionCheckEditor.prototype, "rolePermissions", {
@@ -3671,7 +3671,7 @@ var CaveSerene;
                     }
                     this.setItems(this.getItems());
                 },
-                enumerable: true,
+                enumerable: false,
                 configurable: true
             });
             Object.defineProperty(PermissionCheckEditor.prototype, "implicitPermissions", {
@@ -3691,7 +3691,7 @@ var CaveSerene;
                         }
                     }
                 },
-                enumerable: true,
+                enumerable: false,
                 configurable: true
             });
             PermissionCheckEditor = __decorate([
@@ -3908,7 +3908,7 @@ var CaveSerene;
             set: function (value) {
                 this.byId('ProgressBar').progressbar().progressbar('option', 'max', value);
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(BasicProgressDialog.prototype, "value", {
@@ -3918,7 +3918,7 @@ var CaveSerene;
             set: function (value) {
                 this.byId('ProgressBar').progressbar().progressbar('value', value);
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(BasicProgressDialog.prototype, "title", {
@@ -3928,7 +3928,7 @@ var CaveSerene;
             set: function (value) {
                 this.element.dialog().dialog('option', 'title', value);
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         BasicProgressDialog.prototype.getDialogOptions = function () {
@@ -4343,7 +4343,7 @@ var CaveSerene;
                         return y;
                     }), true);
                 },
-                enumerable: true,
+                enumerable: false,
                 configurable: true
             });
             GridEditorBase.prototype.getGridCanLoad = function () {

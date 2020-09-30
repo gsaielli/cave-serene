@@ -329,3 +329,10 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/CaveSerene/CaveSerene/truststore.jks
+/CaveSerene/CaveSerene/tnsnames.ora
+/CaveSerene/CaveSerene/sqlnet.ora
+/CaveSerene/CaveSerene/ojdbc.properties
+/CaveSerene/CaveSerene/keystore.jks
+/CaveSerene/CaveSerene/ewallet.p12
+/CaveSerene/CaveSerene/cwallet.sso
