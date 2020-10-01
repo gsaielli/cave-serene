@@ -292,6 +292,8 @@ CREATE TABLE [dbo].[Area](
 	[TipoPosizione] [int] NULL,
 	[Progressivo] [int] NULL,
 	[CodiceAreaProv] [varchar](50) NULL,
+	[CoordinataX] [numeric](18, 6) NULL,
+	[CoordinataY] [numeric](18, 6) NULL,
 	[Note] [varchar](max) NULL,
  CONSTRAINT [PK_Polo] PRIMARY KEY CLUSTERED 
 (

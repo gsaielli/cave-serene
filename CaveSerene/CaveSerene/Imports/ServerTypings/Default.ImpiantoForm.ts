@@ -6,9 +6,10 @@
         Progressivo: Serenity.IntegerEditor;
         Frazione: Serenity.StringEditor;
         CatastoProvinciale: Serenity.StringEditor;
+        DataInstallazioneImpianto: Serenity.DateEditor;
         CoordinataX: Serenity.DecimalEditor;
         CoordinataY: Serenity.DecimalEditor;
-        DataInstallazioneImpianto: Serenity.DateEditor;
+        GIS: StaticTextBlock;
     }
 
     export class ImpiantoForm extends Serenity.PrefixedContext {
@@ -26,8 +27,9 @@
                 var w1 = s.LookupEditor;
                 var w2 = s.EnumEditor;
                 var w3 = s.IntegerEditor;
-                var w4 = s.DecimalEditor;
-                var w5 = s.DateEditor;
+                var w4 = s.DateEditor;
+                var w5 = s.DecimalEditor;
+                var w6 = StaticTextBlock;
 
                 Q.initFormType(ImpiantoForm, [
                     'Nome', w0,
@@ -36,9 +38,10 @@
                     'Progressivo', w3,
                     'Frazione', w0,
                     'CatastoProvinciale', w0,
-                    'CoordinataX', w4,
-                    'CoordinataY', w4,
-                    'DataInstallazioneImpianto', w5
+                    'DataInstallazioneImpianto', w4,
+                    'CoordinataX', w5,
+                    'CoordinataY', w5,
+                    'GIS', w6
                 ]);
             }
         }

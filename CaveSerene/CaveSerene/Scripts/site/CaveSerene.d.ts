@@ -420,6 +420,9 @@ declare namespace CaveSerene.Default {
         Progressivo: Serenity.IntegerEditor;
         CodiceAreaProv: Serenity.StringEditor;
         Note: Serenity.TextAreaEditor;
+        CoordinataX: Serenity.DecimalEditor;
+        CoordinataY: Serenity.DecimalEditor;
+        GIS: StaticTextBlock;
     }
     class AreaForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -436,6 +439,8 @@ declare namespace CaveSerene.Default {
         TipoPosizione?: Modules.Default.Enums.TipoPosizione;
         Progressivo?: number;
         CodiceAreaProv?: string;
+        CoordinataX?: number;
+        CoordinataY?: number;
         Note?: string;
     }
     namespace AreaRow {
@@ -452,6 +457,8 @@ declare namespace CaveSerene.Default {
             TipoPosizione = "TipoPosizione",
             Progressivo = "Progressivo",
             CodiceAreaProv = "CodiceAreaProv",
+            CoordinataX = "CoordinataX",
+            CoordinataY = "CoordinataY",
             Note = "Note"
         }
     }
@@ -796,9 +803,9 @@ declare namespace CaveSerene.Default {
         VincoloAmbientale: Serenity.IntegerEditor;
         AreaProtetta: Serenity.BooleanEditor;
         ProfonditaFalda: Serenity.DecimalEditor;
-        GIS: StaticTextBlock;
         CoordinataX: Serenity.DecimalEditor;
         CoordinataY: Serenity.DecimalEditor;
+        GIS: StaticTextBlock;
     }
     class CavaForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1410,9 +1417,10 @@ declare namespace CaveSerene.Default {
         Progressivo: Serenity.IntegerEditor;
         Frazione: Serenity.StringEditor;
         CatastoProvinciale: Serenity.StringEditor;
+        DataInstallazioneImpianto: Serenity.DateEditor;
         CoordinataX: Serenity.DecimalEditor;
         CoordinataY: Serenity.DecimalEditor;
-        DataInstallazioneImpianto: Serenity.DateEditor;
+        GIS: StaticTextBlock;
     }
     class ImpiantoForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1546,11 +1554,12 @@ declare namespace CaveSerene.Default {
         Progressivo: Serenity.IntegerEditor;
         Frazione: Serenity.StringEditor;
         CatastoProvinciale: Serenity.StringEditor;
-        CoordinataX: Serenity.DecimalEditor;
-        CoordinataY: Serenity.DecimalEditor;
         VincoloAmbientale: Serenity.IntegerEditor;
         AreaProtetta: Serenity.BooleanEditor;
         ProfonditaFalda: Serenity.DecimalEditor;
+        CoordinataX: Serenity.DecimalEditor;
+        CoordinataY: Serenity.DecimalEditor;
+        GIS: StaticTextBlock;
     }
     class MinieraForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -3476,6 +3485,9 @@ declare namespace CaveSerene.Default {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: AreaForm;
+        protected map: any;
+        constructor(container: JQuery);
+        protected afterLoadEntity(): void;
     }
 }
 declare namespace CaveSerene.Default {
@@ -3779,6 +3791,9 @@ declare namespace CaveSerene.Default {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: ImpiantoForm;
+        protected map: any;
+        constructor(container: JQuery);
+        protected afterLoadEntity(): void;
     }
 }
 declare namespace CaveSerene.Default {
@@ -3822,6 +3837,9 @@ declare namespace CaveSerene.Default {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: MinieraForm;
+        protected map: any;
+        constructor(container: JQuery);
+        protected afterLoadEntity(): void;
     }
 }
 declare namespace CaveSerene.Default {

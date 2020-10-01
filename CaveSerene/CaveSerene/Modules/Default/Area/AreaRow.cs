@@ -64,6 +64,20 @@ namespace CaveSerene.Default.Entities
             set { Fields.CodiceAreaProv[this] = value; }
         }
 
+        [DisplayName("Coordinata X"), Size(18), Scale(6)]
+        public Decimal? CoordinataX
+        {
+            get { return Fields.CoordinataX[this]; }
+            set { Fields.CoordinataX[this] = value; }
+        }
+
+        [DisplayName("Coordinata Y"), Size(18), Scale(6)]
+        public Decimal? CoordinataY
+        {
+            get { return Fields.CoordinataY[this]; }
+            set { Fields.CoordinataY[this] = value; }
+        }
+
         [DisplayName("Note"), QuickSearch]
         public String Note
         {
@@ -97,6 +111,8 @@ namespace CaveSerene.Default.Entities
             public Int32Field TipoPosizione;
             public Int32Field Progressivo;
             public StringField CodiceAreaProv;
+            public DecimalField CoordinataX;
+            public DecimalField CoordinataY;
             public StringField Note;
         }
     }

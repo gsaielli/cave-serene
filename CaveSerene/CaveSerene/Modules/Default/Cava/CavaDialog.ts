@@ -36,14 +36,24 @@ namespace CaveSerene.Default {
 
             this.map.setView([x, y], 15);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '<a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                attribution: '<a href="https://www.openstreetmap.org/copyright">OSM</a>',
             }).addTo(this.map);
-            L.marker([x, y]).addTo(this.map)
+            var m = L.marker([x, y]).addTo(this.map)
                 .bindPopup("Cava " + nome)
                 .openPopup();
 
-            setTimeout(() => { this.map.invalidateSize() }, 1000);
+            function onMapClick(e) {
+                $("input[name='CoordinataX']")[0].value = e.latlng.lat;
+                $("input[name='CoordinataY']")[0].value = e.latlng.lng;
+            }
 
+            this.map.on('click', onMapClick);
+
+            setTimeout(() => {
+                var a = m.getPopup();
+                a.update();
+                this.map.invalidateSize();
+            }, 1000);
         }
     }
 }

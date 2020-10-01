@@ -8,11 +8,12 @@
         Progressivo: Serenity.IntegerEditor;
         Frazione: Serenity.StringEditor;
         CatastoProvinciale: Serenity.StringEditor;
-        CoordinataX: Serenity.DecimalEditor;
-        CoordinataY: Serenity.DecimalEditor;
         VincoloAmbientale: Serenity.IntegerEditor;
         AreaProtetta: Serenity.BooleanEditor;
         ProfonditaFalda: Serenity.DecimalEditor;
+        CoordinataX: Serenity.DecimalEditor;
+        CoordinataY: Serenity.DecimalEditor;
+        GIS: StaticTextBlock;
     }
 
     export class MinieraForm extends Serenity.PrefixedContext {
@@ -30,8 +31,9 @@
                 var w1 = s.LookupEditor;
                 var w2 = s.EnumEditor;
                 var w3 = s.IntegerEditor;
-                var w4 = s.DecimalEditor;
-                var w5 = s.BooleanEditor;
+                var w4 = s.BooleanEditor;
+                var w5 = s.DecimalEditor;
+                var w6 = StaticTextBlock;
 
                 Q.initFormType(MinieraForm, [
                     'Nome', w0,
@@ -42,11 +44,12 @@
                     'Progressivo', w3,
                     'Frazione', w0,
                     'CatastoProvinciale', w0,
-                    'CoordinataX', w4,
-                    'CoordinataY', w4,
                     'VincoloAmbientale', w3,
-                    'AreaProtetta', w5,
-                    'ProfonditaFalda', w4
+                    'AreaProtetta', w4,
+                    'ProfonditaFalda', w5,
+                    'CoordinataX', w5,
+                    'CoordinataY', w5,
+                    'GIS', w6
                 ]);
             }
         }

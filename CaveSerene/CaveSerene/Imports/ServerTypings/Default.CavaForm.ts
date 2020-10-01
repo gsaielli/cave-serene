@@ -11,9 +11,9 @@
         VincoloAmbientale: Serenity.IntegerEditor;
         AreaProtetta: Serenity.BooleanEditor;
         ProfonditaFalda: Serenity.DecimalEditor;
-        GIS: StaticTextBlock;
         CoordinataX: Serenity.DecimalEditor;
         CoordinataY: Serenity.DecimalEditor;
+        GIS: StaticTextBlock;
     }
 
     export class CavaForm extends Serenity.PrefixedContext {
@@ -47,9 +47,9 @@
                     'VincoloAmbientale', w3,
                     'AreaProtetta', w4,
                     'ProfonditaFalda', w5,
-                    'GIS', w6,
                     'CoordinataX', w5,
-                    'CoordinataY', w5
+                    'CoordinataY', w5,
+                    'GIS', w6
                 ]);
             }
         }
