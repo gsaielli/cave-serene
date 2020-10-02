@@ -59,7 +59,7 @@ Esempi di visualizzazione dell'**Anagrafica Cave in iPhone 5**  (320x658 pixels)
 Le funzionalità implementate **sono funzionanti al 100%** anche se test molto estesi non sono stati effettuati. Segnalateci eventuali errori [qui](https://github.com/gsaielli/cave-serene/issues).
 
 ## Demo online
-Il demo online non è più disponibile.
+Il demo online si trova [qui](http://caveserene.aielli.net). L'installazione attuale è su database Oracle 19c su cloud e macchina virtuale Windows 2019 su Azure.
 
 ## Come installare o modificare Cave-Serene 
 ATTENZIONE: **le istruzioni che seguono si riferiscono esclusivamente all'installazione sotto Windows con database SQL Server**. E' necessaria una certa pratica.
