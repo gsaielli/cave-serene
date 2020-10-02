@@ -36,13 +36,13 @@ E' integrato anche un semplice **sistema cartografico**.
 I dati di Autorizzazione e Rendicontazione sono **pienamente sufficienti per la creazione del report ISTAT**. Tuttavia questa sezione NON è stata ancora implementata.
 
 ## Multipiattaforma
-Al momento Cave-Serene è una applicazione **.Net Framework 4.5 e gira sotto Windows con IIS**; è in corso di preparazione una versione multipiattaforma con **Asp.Net Core**.  
+Al momento Cave-Serene è una applicazione **.Net Framework 4.6.1 e gira sotto Windows con IIS**; è in corso di preparazione una versione multipiattaforma con **Asp.Net Core**.  
 
 ### Serenity
 Cave-Serene è stato realizzato con **Visual Studio 2015** (anche Community Edition) e [**Serenity**](https://github.com/volkanceylan/Serenity). L'ultima versione è stata modificata con **Visual Studio 2019 CE**
 
 ### Piattaforme supportate
-La versione .Net Core è multipiattaforma e gira sotto Windows, Linux e macOS.
+La versione .Net Core sarà multipiattaforma e girerà sotto Windows, Linux e macOS. La versione attuale supporta solo server Windows. L'applicazione web è responsive e lato client supporta molto bene la maggior parte dei dispositivi mobile. 
 
 ### Database supportati
 Al momento i database supportati sono **Microsoft SQL Server, Postgres SQL, MySQL, SQLLite e Oracle**.
