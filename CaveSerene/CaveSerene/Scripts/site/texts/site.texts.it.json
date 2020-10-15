@@ -56,7 +56,7 @@
     "Forms.Membership.ForgotPassword.SubmitButton": "Reimposta password",
     "Forms.Membership.ForgotPassword.Success": "E' stata inviata una mail con le istruzioni per reimpostare la password al tuo indirizzo di posta elettronica.",
     "Forms.Membership.Login.ForgotPassword": "password dimenticata?",
-    "Forms.Membership.Login.FormTitle": "Benvenuto in SERENE (Serenity Application Template)",
+    "Forms.Membership.Login.FormTitle": "Benvenuto in CAVE SERENE",
     "Forms.Membership.Login.SignInButton": "Entra",
     "Forms.Membership.Login.SignUpButton": "registra un nuovo account",
     "Forms.Membership.ResetPassword.EmailSubject": "Reimposta la tua password",

@@ -7,8 +7,7 @@
         TipoPosizione?: Modules.Default.Enums.TipoPosizione;
         Progressivo?: number;
         CodiceAreaProv?: string;
-        CoordinataX?: number;
-        CoordinataY?: number;
+        Poligon?: string;
         Note?: string;
     }
 
@@ -30,8 +29,7 @@
             TipoPosizione = "TipoPosizione",
             Progressivo = "Progressivo",
             CodiceAreaProv = "CodiceAreaProv",
-            CoordinataX = "CoordinataX",
-            CoordinataY = "CoordinataY",
+            Poligon = "Poligon",
             Note = "Note"
         }
     }

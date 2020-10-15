@@ -23,10 +23,10 @@ namespace CaveSerene.Default.Forms
         [TextAreaEditor(Rows = 3)]
         public String Note { get; set; }
         [Tab("GIS")]
-        public Decimal CoordinataX { get; set; }
-        public Decimal CoordinataY { get; set; }
         [DisplayName("Mappa"), NotMapped]
         [StaticTextBlock(Text = "<div id='mapid'></div>", IsHtml = true)]
         public String GIS { get; set; }
+        [TextAreaEditor(Rows = 3)]
+        public String Polygon { get; set; }
     }
 }

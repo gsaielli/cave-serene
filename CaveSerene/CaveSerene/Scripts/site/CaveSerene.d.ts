@@ -420,9 +420,8 @@ declare namespace CaveSerene.Default {
         Progressivo: Serenity.IntegerEditor;
         CodiceAreaProv: Serenity.StringEditor;
         Note: Serenity.TextAreaEditor;
-        CoordinataX: Serenity.DecimalEditor;
-        CoordinataY: Serenity.DecimalEditor;
         GIS: StaticTextBlock;
+        Polygon: Serenity.TextAreaEditor;
     }
     class AreaForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -439,8 +438,7 @@ declare namespace CaveSerene.Default {
         TipoPosizione?: Modules.Default.Enums.TipoPosizione;
         Progressivo?: number;
         CodiceAreaProv?: string;
-        CoordinataX?: number;
-        CoordinataY?: number;
+        Poligon?: string;
         Note?: string;
     }
     namespace AreaRow {
@@ -457,8 +455,7 @@ declare namespace CaveSerene.Default {
             TipoPosizione = "TipoPosizione",
             Progressivo = "Progressivo",
             CodiceAreaProv = "CodiceAreaProv",
-            CoordinataX = "CoordinataX",
-            CoordinataY = "CoordinataY",
+            Poligon = "Poligon",
             Note = "Note"
         }
     }

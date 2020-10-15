@@ -22,5 +22,6 @@ namespace CaveSerene.Default.Columns
         [Width(100)]
         public String CodiceAreaProv { get; set; }
         public String Note { get; set; }
+        public String Polygon { get; set; }
     }
 }

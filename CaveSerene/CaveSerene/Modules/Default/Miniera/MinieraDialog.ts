@@ -32,7 +32,8 @@ namespace CaveSerene.Default {
             y = this.form.CoordinataY.value;
             nome = this.form.Nome.value;
 
-            if (nome === "" || x == null || y == null) return;
+            if (x == null) x = 44.469806;
+            if (y == null) y = 11.291885; //Bologna
 
             this.map.setView([x, y], 15);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -43,8 +44,8 @@ namespace CaveSerene.Default {
                 .openPopup();
 
             function onMapClick(e) {
-                $("input[name='CoordinataX']")[0].value = e.latlng.lat;
-                $("input[name='CoordinataY']")[0].value = e.latlng.lng;
+                $("input[name='CoordinataX']")[0].value = e.latlng.lat.toFixed(6).replace(".", ",");
+                $("input[name='CoordinataY']")[0].value = e.latlng.lng.toFixed(6).replace(".", ",");
             }
 
             this.map.on('click', onMapClick);

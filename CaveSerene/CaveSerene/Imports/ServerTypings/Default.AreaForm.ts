@@ -7,9 +7,8 @@
         Progressivo: Serenity.IntegerEditor;
         CodiceAreaProv: Serenity.StringEditor;
         Note: Serenity.TextAreaEditor;
-        CoordinataX: Serenity.DecimalEditor;
-        CoordinataY: Serenity.DecimalEditor;
         GIS: StaticTextBlock;
+        Polygon: Serenity.TextAreaEditor;
     }
 
     export class AreaForm extends Serenity.PrefixedContext {
@@ -27,8 +26,7 @@
                 var w1 = s.EnumEditor;
                 var w2 = s.IntegerEditor;
                 var w3 = s.TextAreaEditor;
-                var w4 = s.DecimalEditor;
-                var w5 = StaticTextBlock;
+                var w4 = StaticTextBlock;
 
                 Q.initFormType(AreaForm, [
                     'Nome', w0,
@@ -38,9 +36,8 @@
                     'Progressivo', w2,
                     'CodiceAreaProv', w0,
                     'Note', w3,
-                    'CoordinataX', w4,
-                    'CoordinataY', w4,
-                    'GIS', w5
+                    'GIS', w4,
+                    'Polygon', w3
                 ]);
             }
         }
