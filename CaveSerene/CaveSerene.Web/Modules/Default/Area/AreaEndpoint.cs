@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using Serenity.Reporting;
 using Serenity.Web;
 
