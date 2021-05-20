@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveSerene", "CaveSerene\CaveSerene\CaveSerene.csproj", "{E298DC33-D240-4585-AC47-775575246780}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveSerene.Web", "CaveSerene\CaveSerene.Web\CaveSerene.Web.csproj", "{E298DC33-D240-4585-AC47-775575246780}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaveSereneTests", "CaveSerene\CaveSereneTests\CaveSereneTests.csproj", "{F6083F2D-A131-4D58-A2E2-02745D770DAC}"
 EndProject
