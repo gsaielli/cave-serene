@@ -4426,6 +4426,7 @@ declare namespace CaveSerene.Default {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace CaveSerene.Membership {

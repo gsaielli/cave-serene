@@ -190,6 +190,8 @@ namespace CaveSerene
 
         private void RunMigrations(string databaseKey)
         {
+            return;
+
             var cs = SqlConnections.TryGetConnectionString(databaseKey);
             if (cs == null)
                 throw new ArgumentOutOfRangeException(nameof(databaseKey));

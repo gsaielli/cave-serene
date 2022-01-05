@@ -1,5 +1,4 @@
-﻿
-namespace CaveSerene.Default.Columns
+﻿namespace CaveSerene.Default.Columns
 {
     using Serenity.ComponentModel;
     using System;

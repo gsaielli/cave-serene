@@ -23,6 +23,17 @@ namespace CaveSerene
                     public static LocalText SaveChangesButton = "Save Changes";
                 }
             }
+            public static class Default
+            {
+                public static class Autorizzazione
+                {
+                    public static LocalText Descrizione = "Descrizione";
+                }
+                public static class Concessione
+                {
+                    public static LocalText Descrizione = "Descrizione";
+                }
+            }
         }
 
         public static class Forms
@@ -56,19 +67,19 @@ namespace CaveSerene
 
                 public static class Login
                 {
-                    public static LocalText FormTitle = "Welcome to SERENE (Serenity Application Template)";
-                    public static LocalText SignInButton = "Sign In";
-                    public static LocalText ForgotPassword = "Forgot password?";
-                    public static LocalText SignUpButton = "Register a new account";
-                    public static LocalText RememberMe = "Remember Me";
-                    public static LocalText OR = "OR";
-                    public static LocalText FacebookButton = "Sign in using Facebook";
-                    public static LocalText GoogleButton = "Sign in using Google+";
+                    public static LocalText FormTitle = "Benvenuti in Caveserene";
+                    public static LocalText SignInButton = "Log In";
+                    public static LocalText ForgotPassword = "Password Dimenticata?";
+                    public static LocalText SignUpButton = "Registra un nuovo account";
+                    public static LocalText RememberMe = "Ricordami";
+                    public static LocalText OR = "O";
+                    public static LocalText FacebookButton = "Entra con Facebook";
+                    public static LocalText GoogleButton = "Entra con Google+";
                 }
 
                 public static class SignUp
                 {
-                    public static LocalText ActivateEmailSubject = "Activate Your CaveSerene Account";
+                    public static LocalText ActivateEmailSubject = "Attiva il tuo account CaveSerene";
                     public static LocalText ActivationCompleteMessage = "Your account is now activated. " +
                         "Use the e-mail and password you used while signing up to login.";
                     public static LocalText FormInfo = "Enter your details to create a free account.";
@@ -109,8 +120,8 @@ namespace CaveSerene
             public static class Dashboard
             {
                 public static LocalText ContentDescription =
-                    "a sample with random data (from free <em><a href = \"https://almsaeedstudio.com/\" target= \"_blank\">" +
-                    "AdminLTE theme</a></em>)";
+                    "è solo un esempio di cruscotto (preso da <em><a href = \"https://almsaeedstudio.com/\" target= \"_blank\">" +
+                    "AdminLTE</a></em>)";
             }
 
             public static class BasicProgressDialog
@@ -160,7 +171,7 @@ namespace CaveSerene
 
             public static class Layout
             {
-                public static LocalText FooterCopyright = "Copyright (c) 2015.";
+                public static LocalText FooterCopyright = "Copyright (c) 2022.";
                 public static LocalText FooterInfo = "Serenity Platform";
                 public static LocalText FooterRights = "All rights reserved.";
                 public static LocalText GeneralSettings = "General Settings";

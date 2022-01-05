@@ -1,5 +1,4 @@
-﻿
-namespace CaveSerene.Default {
+﻿namespace CaveSerene.Default {
 
     @Serenity.Decorators.registerClass()
     export class TipoMaterialeGrid extends Serenity.EntityGrid<TipoMaterialeRow, any> {
@@ -11,6 +10,12 @@ namespace CaveSerene.Default {
 
         constructor(container: JQuery) {
             super(container);
+        }
+
+        getButtons() {
+            var buttons = super.getButtons();
+            buttons[0].title = "Aggiungi Tipo Materiale";
+            return buttons;
         }
     }
 }

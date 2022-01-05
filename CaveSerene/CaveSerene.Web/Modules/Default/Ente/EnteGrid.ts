@@ -20,6 +20,8 @@ namespace CaveSerene.Default {
         getButtons() {
             var buttons = super.getButtons();
 
+            buttons[0].title = "Aggiungi Ente";
+
             buttons.push(CaveSerene.Common.ExcelExportHelper.createToolButton({
                 grid: this,
                 onViewSubmit: () => this.onViewSubmit(),

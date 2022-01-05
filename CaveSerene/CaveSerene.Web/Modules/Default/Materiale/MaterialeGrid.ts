@@ -36,6 +36,8 @@ namespace CaveSerene.Default {
         getButtons() {
             var buttons = super.getButtons();
 
+            buttons[0].title = "Aggiungi Materiale";
+
             buttons.push(CaveSerene.Common.ExcelExportHelper.createToolButton({
                 grid: this,
                 onViewSubmit: () => this.onViewSubmit(),
