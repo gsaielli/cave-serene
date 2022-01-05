@@ -40,6 +40,11 @@
     <PackageReference Include="Serenity.Scripts" Version="5.0.41" />
     <PackageReference Include="Serenity.Demo.ThemeSamples" Version="5.0.41" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="App_Data\caveserene.sqlite">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(SolutionDir)Serenity\build\submodule.targets" Condition="Exists('$(SolutionDir)Serenity\build\submodule.targets')" />
   <Target Name="CreateInputsOutputs" BeforeTargets="BeforeBuild">
     <CreateItem Include="Modules\**\*.ts;Imports\**\*.ts">

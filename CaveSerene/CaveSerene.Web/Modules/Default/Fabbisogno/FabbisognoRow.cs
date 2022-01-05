@@ -16,7 +16,7 @@
 #if ORACLE
         [DisplayName("Id"), Expression("TO_CHAR(IDPiano) || '-' || TO_CHAR(IdMateriale)"), IdProperty]
 #else
-        [DisplayName("Id"), Expression("convert(varchar(50),IDPiano) + '-' + convert(varchar(50),IdMateriale)"), IdProperty]
+        [DisplayName("Id"), Expression("CAST(IDPiano AS varchar(50)) + '-' + CAST(IdMateriale AS varchar(50))"), IdProperty]
 #endif
         public String Id
         {

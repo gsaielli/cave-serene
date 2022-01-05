@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "Data:Default:ConnectionString",
+      "suggestion": "true",
+      "ignored": "true"
+    }
+  }
+}
