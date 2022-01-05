@@ -2409,38 +2409,6 @@ a.quick-search-field {
     text-align: right;
 }
 
-.s-Northwind-CategoryDialog .s-Form .editor.s-DateTimeEditor.time {
-    margin-right: 4px;
-}
-
-.s-Northwind-CustomerDialog .s-Form .editor.s-DateTimeEditor.time {
-    margin-right: 4px;
-}
-
-.s-Northwind-OrderDetailDialog .s-Form .editor.s-DateTimeEditor.time {
-    margin-right: 4px;
-}
-
-.s-Northwind-ProductGrid .slick-cell input[type=text] {
-    text-align: right;
-}
-
-.s-Northwind-RegionDialog .s-Form .editor.s-DateTimeEditor.time {
-    margin-right: 4px;
-}
-
-.s-Northwind-ShipperDialog .s-Form .editor.s-DateTimeEditor.time {
-    margin-right: 4px;
-}
-
-.s-Northwind-SupplierDialog .s-Form .editor.s-DateTimeEditor.time {
-    margin-right: 4px;
-}
-
-.s-Northwind-TerritoryDialog .s-Form .editor.s-DateTimeEditor.time {
-    margin-right: 4px;
-}
-
 .employee-symbol {
     padding: 2px 0 2px 20px;
 }
