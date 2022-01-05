@@ -18,7 +18,7 @@ namespace CaveSerene.Default.Entities
 #if ORACLE
         [DisplayName("Id"), Expression("TO_CHAR(IDRendiconto) || '-' || TO_CHAR(TipoDestinazioneTerritoriale)"), IdProperty]
 #else
-        [DisplayName("Id"), Expression("convert(varchar(50),IDRendiconto) + '-' + convert(varchar(50),TipoDestinazioneTerritoriale)"), IdProperty]
+        [DisplayName("Id"), Expression("CAST(IDRendiconto AS varchar(50)) + '-' + CAST(TipoDestinazioneTerritoriale AS varchar(50))"), IdProperty]
 #endif
         public String Id
         {

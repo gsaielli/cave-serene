@@ -21,7 +21,7 @@ namespace CaveSerene.Default.Entities
 #if ORACLE
         [Expression("jIdStruttura.[Nome] || '-' || NumeroAtto || ' del ' || TO_CHAR(DataAutorizzazione)"), QuickSearch, NameProperty]
 #else
-        [Expression("jIdStruttura.[Nome] + '-' + NumeroAtto + ' del ' + convert(varchar(50),DataAutorizzazione)"), QuickSearch, NameProperty]
+        [Expression("jIdStruttura.[Nome] + '-' + NumeroAtto + ' del ' + CAST(DataAutorizzazione AS varchar(50))"), QuickSearch, NameProperty]
 #endif
         public String Descrizione
         {
