@@ -61,7 +61,7 @@ Cave-Serene è multipiattaforma e gira sotto Windows, Linux e macOS. L'applicazi
 bene la maggior parte dei dispositivi mobile. 
 
 ### Database supportati
-Al momento i database supportati sono **Microsoft SQL Server, MySQL, SQLLite e Oracle**.
+Al momento i database supportati sono **Microsoft SQL Server, MySQL, SQLite e Oracle**.
 
 ### Compatibilità
 Cave-Serene è una applicazione web **HTML5 responsive**. Come tale essa è compatibile con una gamma molto estesa di dispositivi: 
@@ -81,7 +81,7 @@ Il demo online si trova [qui](https://caveserene.azurewebsites.net/). L'installa
 
 ## Come installare o modificare Cave-Serene 
 
-### Database supportati: SQL Server, Oracle, MySQl e SQLITE
+### Database supportati: SQL Server, Oracle, MySQL e SQLite
 Potete creare il database utilizzando gli script acclusi [qui](https://github.com/gsaielli/cave-serene/blob/master/).
 In alternativa usate caveserene.sqlite che si trova tra i sorgenti.
 
@@ -103,4 +103,4 @@ Cave-Serene è un software Open Source rilasciato in licenza
 Se desiderate collaborare allo sviluppo di Cave-Serene, potete contribuire ad esempio segnalando bug e migliorie del software 
 oppure della documentazione. 
 
-:+1: Ultimo aggiornamento: 5 gennaio 2022
+:+1: Ultimo aggiornamento: 7 gennaio 2022
